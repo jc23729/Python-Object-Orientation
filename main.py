@@ -23,15 +23,23 @@ from math import sqrt
 from ranom import randint
 
 class Triangle:
-    def __init__(self,a,b):
+    "Right triangle."
+
+    def __init__(self, a, b):
+        "Create triangle from a and b sides."
         self.a = a
         self.b = b
-        
+
     def get_hypotenuse(self):
-        return sqrt(self.a ** 2 + self.b ** 2)
+        "Get hypotenuse (length of 3rd side)."
+        return math.sqrt(self.a ** 2 + self.b ** 2)
 
     def get_area(self):
-        return = self.a * self.b / 2
+        "Get area of triangle."
+        return (self.a * self.b) / 2
+
+    def describe(self):
+        return f"My area is {self.get_area()}"
 
 #Class methods
 #@classmethod decorator creating some instance like a factory method, like make a triangle for us. 
@@ -39,3 +47,18 @@ class Triangle:
 @classmethod
 def random(cls):
     print(cls
+
+#Like in JS, classes can subclass other objects:
+class ColoredTriangle(Triangle):
+    """Triangle that has a color."""
+
+    def __init__(self, a, b, color):
+        # get parent class [`super()`], call its `__init__()`
+        super().__init__(a, b)
+
+        self.color = color
+
+    def describe(self):
+        msg = super().describe() + f" I am {self.color}"
+
+  
