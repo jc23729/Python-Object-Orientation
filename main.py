@@ -61,4 +61,11 @@ class ColoredTriangle(Triangle):
     def describe(self):
         msg = super().describe() + f" I am {self.color}"
 
-  
+#   Super
+# Like in JS, super finds parent class:
+
+# JS: super is parent, super(...) calls parent constructor function
+# Python: super() is parent, super().__init__(...) is parent initializer
+# Multi-Level Inheritance
+# Like in JS, you can have multiple levels of inheritance
+
